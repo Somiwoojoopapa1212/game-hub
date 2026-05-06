@@ -136,9 +136,16 @@
     .game-card.flags:hover { border-color: rgba(251,191,36,0.35); box-shadow: 0 12px 40px rgba(251,191,36,0.15); }
 
     .card-emoji {
-      font-size: 56px; text-align: center;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+      text-align: center;
     }
+    .card-emoji img {
+      width: 100px; height: 100px;
+      border-radius: 22px;
+      object-fit: cover;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+      transition: transform 0.2s;
+    }
+    .game-card:hover .card-emoji img { transform: scale(1.06); }
     .card-name {
       font-size: 20px; font-weight: 800;
       text-align: center; color: #f1f5f9;
@@ -261,7 +268,7 @@
 
     <!-- 두더지 잡기 -->
     <div class="game-card mole" onclick="playGame('https://somiwoojoopapa1212.github.io/mole-game/','두더지 잡기')">
-      <div class="card-emoji">🐭</div>
+      <div class="card-emoji"><img src="icons/mole.png" alt="두더지 잡기" /></div>
       <div class="card-name">두더지 잡기</div>
       <div class="card-desc">땅에서 솟아오르는 두더지를 최대한 빠르게 탭하라! 11단계 난이도 도전</div>
       <div class="card-tags">
@@ -274,7 +281,7 @@
 
     <!-- 구구단 마스터 -->
     <div class="game-card gugu" onclick="playGame('https://somiwoojoopapa1212.github.io/gugu-game/','구구단 마스터')">
-      <div class="card-emoji">🔢</div>
+      <div class="card-emoji"><img src="icons/gugu.png" alt="구구단 마스터" /></div>
       <div class="card-name">구구단 마스터</div>
       <div class="card-desc">빛의 속도로 구구단 문제를 풀어라! 스피드와 정확도를 동시에</div>
       <div class="card-tags">
@@ -287,7 +294,7 @@
 
     <!-- 세계 국기 퀴즈 -->
     <div class="game-card flags" onclick="playGame('https://somiwoojoopapa1212.github.io/flags-quiz/','세계 국기 퀴즈')">
-      <div class="card-emoji">🌍</div>
+      <div class="card-emoji"><img src="icons/flags.png" alt="세계 국기 퀴즈" /></div>
       <div class="card-name">세계 국기 퀴즈</div>
       <div class="card-desc">세계의 국기를 보고 나라와 수도를 맞춰라! 글로벌 랭킹 도전</div>
       <div class="card-tags">
