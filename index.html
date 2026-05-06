@@ -210,6 +210,32 @@
       flex: 1; width: 100%; border: none;
     }
 
+    /* ── 카카오 브라우저 안내 ── */
+    .kakao-notice {
+      position: fixed; top: 20px; left: 50%;
+      transform: translateX(-50%) translateY(-80px);
+      background: rgba(10,10,30,0.96);
+      border: 1px solid rgba(254,229,0,0.4);
+      border-radius: 14px; padding: 14px 20px;
+      z-index: 2000; max-width: min(340px, 90vw);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+      display: flex; align-items: center; gap: 12px;
+      transition: transform 0.4s cubic-bezier(0.32,0.72,0,1), opacity 0.4s;
+      opacity: 0;
+    }
+    .kakao-notice.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+    .kakao-notice.hide {
+      transform: translateX(-50%) translateY(-80px);
+      opacity: 0;
+    }
+    .kakao-notice-icon { font-size: 26px; flex-shrink: 0; }
+    .kakao-notice-text { font-size: 13px; color: #fef9c3; line-height: 1.55; }
+    .kakao-notice-text strong { color: #fde047; }
+
     /* ── 설치 배너 ── */
     .install-banner {
       position: fixed; bottom: 24px; left: 50%;
@@ -318,6 +344,15 @@
   <iframe id="game-frame" src="" frameborder="0" allow="fullscreen" allowfullscreen></iframe>
 </div>
 
+<!-- 카카오 브라우저 안내 -->
+<div id="kakao-notice" class="kakao-notice">
+  <div class="kakao-notice-icon">🌐</div>
+  <div class="kakao-notice-text">
+    <strong>크롬 브라우저</strong>로 접속하시면<br>
+    더 원활하게 이용하실 수 있어요!
+  </div>
+</div>
+
 <!-- 설치 배너 -->
 <div id="install-banner" class="install-banner">
   <div class="install-text">📲 홈 화면에 추가하면<br>더 빠르게 실행돼요!</div>
@@ -380,6 +415,16 @@ function installApp() {
 }
 function dismissInstall() {
   document.getElementById('install-banner').classList.remove('show');
+}
+
+/* ── 카카오 브라우저 감지 ── */
+if (/KAKAOTALK|kakaotalk/i.test(navigator.userAgent)) {
+  const notice = document.getElementById('kakao-notice');
+  setTimeout(() => notice.classList.add('show'), 300);
+  setTimeout(() => {
+    notice.classList.add('hide');
+    setTimeout(() => notice.remove(), 400);
+  }, 4500);
 }
 
 /* ── Service Worker ── */
