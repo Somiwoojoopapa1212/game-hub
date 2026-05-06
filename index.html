@@ -59,9 +59,11 @@
     .hub-header { text-align: center; margin-bottom: 52px; }
 
     .hub-logo {
-      font-size: 72px; display: block;
+      width: 120px; height: 120px;
+      border-radius: 26px;
+      display: block; margin: 0 auto;
       animation: float 4s ease-in-out infinite;
-      filter: drop-shadow(0 0 20px rgba(165,180,252,0.5));
+      filter: drop-shadow(0 0 24px rgba(165,180,252,0.5));
     }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
@@ -249,7 +251,7 @@
 
 <main class="hub">
   <header class="hub-header">
-    <span class="hub-logo">🚀</span>
+    <img class="hub-logo" src="icons/icon-512.png" alt="우주의 미니게임천국" />
     <h1 class="hub-title">우주의 미니게임천국</h1>
     <p class="hub-subtitle">별들 사이에서 펼쳐지는 무한한 재미</p>
     <span class="game-count">🎮 게임 3개</span>
