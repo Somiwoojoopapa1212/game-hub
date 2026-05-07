@@ -133,11 +133,13 @@
     .game-card.flags { --glow: rgba(251,191,36,0.12); }
     .game-card.kanji  { --glow: rgba(240,100,100,0.12); }
     .game-card.robot  { --glow: rgba(52,211,153,0.12); }
+    .game-card.unit   { --glow: rgba(167,139,250,0.12); }
     .game-card.mole:hover  { border-color: rgba(74,222,128,0.35);  box-shadow: 0 12px 40px rgba(74,222,128,0.15); }
     .game-card.gugu:hover  { border-color: rgba(96,165,250,0.35);  box-shadow: 0 12px 40px rgba(96,165,250,0.15); }
     .game-card.flags:hover { border-color: rgba(251,191,36,0.35);  box-shadow: 0 12px 40px rgba(251,191,36,0.15); }
     .game-card.kanji:hover { border-color: rgba(240,100,100,0.35);  box-shadow: 0 12px 40px rgba(240,100,100,0.15); }
     .game-card.robot:hover { border-color: rgba(52,211,153,0.35);  box-shadow: 0 12px 40px rgba(52,211,153,0.15); }
+    .game-card.unit:hover  { border-color: rgba(167,139,250,0.35);  box-shadow: 0 12px 40px rgba(167,139,250,0.15); }
 
     .card-emoji {
       text-align: center;
@@ -182,7 +184,8 @@
     .play-btn.blue  { background: linear-gradient(135deg,#60a5fa,#2563eb); color:#fff; box-shadow:0 4px 18px rgba(96,165,250,0.35); }
     .play-btn.gold  { background: linear-gradient(135deg,#fbbf24,#d97706); color:#fff; box-shadow:0 4px 18px rgba(251,191,36,0.35); }
     .play-btn.red   { background: linear-gradient(135deg,#f87171,#dc2626); color:#fff; box-shadow:0 4px 18px rgba(240,100,100,0.35); }
-    .play-btn.teal  { background: linear-gradient(135deg,#34d399,#059669); color:#fff; box-shadow:0 4px 18px rgba(52,211,153,0.35); }
+    .play-btn.teal   { background: linear-gradient(135deg,#34d399,#059669); color:#fff; box-shadow:0 4px 18px rgba(52,211,153,0.35); }
+    .play-btn.purple { background: linear-gradient(135deg,#a78bfa,#7c3aed); color:#fff; box-shadow:0 4px 18px rgba(167,139,250,0.35); }
 
     /* ── 게임 오버레이 (iframe) ── */
     .game-overlay {
@@ -293,7 +296,7 @@
     <img class="hub-logo" src="icons/icon-512.png" alt="우주의 미니게임천국" />
     <h1 class="hub-title">우주의 미니게임천국</h1>
     <p class="hub-subtitle">별들 사이에서 펼쳐지는 무한한 재미</p>
-    <span class="game-count">🎮 게임 5개</span>
+    <span class="game-count">🎮 게임 6개</span>
   </header>
 
   <div class="game-grid">
@@ -361,6 +364,19 @@
         <span class="tag">어린이</span>
       </div>
       <button class="play-btn teal">▶ 플레이</button>
+    </div>
+
+    <!-- 우주봇 단위 연구소 -->
+    <div class="game-card unit" onclick="playGame('https://somiwoojoopapa1212.github.io/unit-lab/','우주봇 단위 연구소')">
+      <div class="card-emoji"><img src="icons/unit-lab.png" alt="우주봇 단위 연구소" onerror="this.parentElement.textContent='📏'" /></div>
+      <div class="card-name">우주봇 단위 연구소</div>
+      <div class="card-desc">mm·cm·m·km·g·kg·ml·L·초·분·시간! 생활 속 단위를 재미있게 익혀요</div>
+      <div class="card-tags">
+        <span class="tag">학습</span>
+        <span class="tag">단위</span>
+        <span class="tag">어린이</span>
+      </div>
+      <button class="play-btn purple">▶ 플레이</button>
     </div>
 
   </div>
