@@ -1,4 +1,4 @@
-const CACHE_NAME = 'game-hub-20260507012239';
+const CACHE_NAME = 'game-hub-20260507053223';
 const ASSETS = ['./', './index.html', './manifest.json'];
 
 self.addEventListener('install', e => {
